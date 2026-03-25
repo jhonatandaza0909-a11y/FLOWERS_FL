@@ -3,7 +3,6 @@ const lyricsText = document.getElementById('lyrics-text');
 const heart = document.getElementById('heart-portal');
 const starsContainer = document.getElementById('stars-container');
 
-// Tiempos exactos sincronizados
 const lyricsData = [
     { time: 38.19, text: "Baby, I'm gonna do better for you because" },
     { time: 49.62, text: "I love you with my heart" },
@@ -28,11 +27,10 @@ const lyricsData = [
     { time: 210.03, text: "" }
 ];
 
-// Movimiento del corazón
 let posX = window.innerWidth / 2;
 let posY = window.innerHeight / 2;
-let velX = 1.5; 
-let velY = 1.3; 
+let velX = 1.8; 
+let velY = 1.5; 
 
 function moveHeart() {
     posX += velX;
@@ -44,7 +42,6 @@ function moveHeart() {
     requestAnimationFrame(moveHeart);
 }
 
-// Control de letras
 audio.addEventListener('timeupdate', () => {
     const currentTime = audio.currentTime;
     const currentLine = lyricsData.find((line, index) => {
@@ -57,7 +54,7 @@ audio.addEventListener('timeupdate', () => {
         setTimeout(() => {
             lyricsText.innerText = currentLine.text;
             lyricsText.style.opacity = 1;
-        }, 200);
+        }, 150);
     }
 });
 
