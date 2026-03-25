@@ -5,7 +5,7 @@ body, html {
     height: 100%;
     background-color: #050505;
     color: #ffffff;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -37,7 +37,6 @@ body, html {
     filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
     animation: heartbeat 1.2s infinite ease-in-out;
     user-select: none;
-    will-change: left, top;
 }
 
 @keyframes heartbeat {
@@ -45,21 +44,19 @@ body, html {
     50% { transform: scale(1.2); }
 }
 
-/* Letras de la canción con Montserrat (Más legible) */
+/* Letras de la canción optimizadas */
 #lyrics-text {
-    font-family: 'Montserrat', sans-serif; /* Cambio a Montserrat */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     text-align: center;
     min-height: 150px;
-    transition: all 0.5s ease;
-    /* Neón más enfocado para lectura clara */
+    /* Transición simple para evitar errores de renderizado */
+    transition: opacity 0.2s ease-in-out;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px #ff69b4;
     padding: 0 20px;
     z-index: 50;
     position: relative;
-    text-transform: uppercase; /* Opcional: le da un toque moderno */
-    letter-spacing: 2px;
 }
 
 /* Flores Rosadas */
