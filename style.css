@@ -1,0 +1,117 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nebulosa de fondo */
+.nebulosa {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(120, 0, 150, 0.2) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    animation: nebulaMove 15s infinite alternate ease-in-out;
+}
+
+@keyframes nebulaMove {
+    from { transform: scale(1); }
+    to { transform: scale(1.3) translate(20px, -20px); }
+}
+
+/* EL CORAZÓN VIAJERO */
+.pulse-heart {
+    font-size: 5rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
+    animation: heartbeat 1.2s infinite ease-in-out;
+    user-select: none;
+    will-change: left, top;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Letras de la canción con Montserrat (Más legible) */
+#lyrics-text {
+    font-family: 'Montserrat', sans-serif; /* Cambio a Montserrat */
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-align: center;
+    min-height: 150px;
+    transition: all 0.5s ease;
+    /* Neón más enfocado para lectura clara */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px #ff69b4;
+    padding: 0 20px;
+    z-index: 50;
+    position: relative;
+    text-transform: uppercase; /* Opcional: le da un toque moderno */
+    letter-spacing: 2px;
+}
+
+/* Flores Rosadas */
+.flower {
+    position: fixed;
+    font-size: 24px;
+    color: #ffb7c5;
+    pointer-events: none;
+    z-index: 5;
+    animation: fallRotate linear forwards;
+}
+
+@keyframes fallRotate {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* "Te amo" de colores */
+.te-amo {
+    position: fixed;
+    font-weight: 700;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 10;
+    animation: floatUpMsg linear forwards;
+}
+
+@keyframes floatUpMsg {
+    0% { transform: translateY(105vh) scale(0.6); opacity: 0; }
+    20% { opacity: 0.9; }
+    100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+}
+
+/* Estrellas */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.footer-msg {
+    position: fixed;
+    bottom: 20px;
+    font-size: 0.7rem;
+    opacity: 0.4;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
